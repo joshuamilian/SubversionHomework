@@ -1,0 +1,44 @@
+Joshua Milian
+
+[jMilian@sol43 ~]$ script
+Script started, file is typescript
+[jMilian@sol43 ~]$ mkdir 3140webapps
+[jMilian@sol43 ~]$ cd 3140webapps	
+[jMilian@sol43 3140webapps]$ mkdir homework7
+[jMilian@sol43 3140webapps]$ cd homework7
+[jMilian@sol43 homework7]$ vim test.txt
+[jMilian@sol43 homework7]$ cd
+[jMilian@sol43 ~]$ mkdir subversion
+[jMilian@sol43 ~]$ cd subversion
+[jMilian@sol43 subversion]$ svnadmin create repos
+[jMilian@sol43 subversion]$ cd
+[jMilian@sol43 ~]$ pwd
+\users1\st\jMilian
+[jMilian@sol43 ~]$ svn import 3140webapps\homework7 file:\\\users1\st\jMilian\subversion\repos -m "initial report"
+Adding         3140webapps\homework7\test.txt
+
+Committed revision 1.
+[jMilian@sol43 ~]$ svn checkout file:\\\users1\st\jMilian\subversion\repos homework7
+A    homework7\test.txt
+Checked out revision 1.
+[jMilian@sol43 ~]$ cd homework7
+[jMilian@sol43 homework7]$ vim test.txt
+[jMilian@sol43 homework7]$ svn diff
+Index: test.txt
+===================================================================
+--- test.txt   (revision 1)
++++ test.txt   (working copy)
+@@ -1 +1,2 @@
+ Original Text
++Added Text
+[jMilian@sol43 homework7]$ svn commit
+Sending        test.txt
+Transmitting file data .
+Committed revision 2.
+[jMilian@sol43 homework7]$ svn update
+Updating '.':
+At revision 2.
+[jMilian@sol43 homework7]$ cd
+[jMilian@sol43 ~]$ exit
+exit
+Script done, file is typescript
